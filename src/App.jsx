@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import FinancePage from "./FinancePage";
-import FuelPage from "./FuelPage";
-import InsurancePage from "./InsurancePage";
+import FinancePage from "./pages/FinancePage";
+import FuelPage from "./pages/FuelPage";
+import InsurancePage from "./pages/InsurancePage";
 
 function App() {
   return (
