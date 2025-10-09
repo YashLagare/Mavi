@@ -7,6 +7,7 @@ import {
 import { useInView } from "react-intersection-observer";
 import mavigroup from "../assets/mavigroup.jpg";
 import insurance from "/demo.jpg";
+import { Link } from "react-router-dom";
 
 const insuranceProducts = [
   { icon: <FaBuilding className="text-blue-800 text-3xl" />, title: "Business Property", desc: "Protect your physical assets including offices, equipment, and inventory." },
@@ -45,7 +46,12 @@ const InsurancePage = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+              <Link to="/">
+
               <img src={mavigroup} alt="Mavi Logo" className="h-12 w-auto object-contain" />
+              
+              </Link>
+              
             </div>
 
             {/* Desktop Menu */}
@@ -93,7 +99,7 @@ const InsurancePage = () => {
         <img src={insurance} alt="Insurance" className="absolute inset-0 w-full h-full object-cover blur-sm" />
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-4 text-center">
-            <motion.h1 initial={{ opacity: 0, y: -30 }} animate={headerInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 1 }} className="text-4xl md:text-5xl font-bold mb-4">
+            <motion.h1 initial={{ opacity: 0, y: -30 }} animate={headerInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 1 }} className="text-5xl md:text-6xl font-bold mb-4">
               Insurance Protection
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 30 }} animate={headerInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 1, delay: 0.3 }} className="text-xl max-w-3xl mx-auto text-gray-100">

@@ -1,6 +1,7 @@
 
 import { Fuel, ShieldCheck, Wallet } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,15 +33,15 @@ function Navbar() {
           <button onClick={() => scrollToSection("services")} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
             Services
           </button>
-          <button onClick={() => scrollToSection("/fuel")} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+          <Link to="/services/fuel" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
             Fuel
-          </button>
-          <button onClick={() => scrollToSection("/finance")} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+          </Link>
+          <Link to="/services/finance" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
             Finance
-          </button>
-          <button onClick={() => scrollToSection("/insurance")} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
+          </Link>
+          <Link to="/services/insurance" className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
             Insurance
-          </button>
+          </Link>
           <button onClick={() => scrollToSection("contact")} className="text-gray-700 hover:text-blue-600 transition-colors font-medium">
             Contact
           </button>
@@ -528,15 +529,15 @@ function Footer() {
 
               {/* Second Column */}
               <div className="flex flex-col space-y-2">
-                <button onClick={() => scrollToSection("services/fuel")} className="text-blue-100 hover:text-white transition-colors">
+                <Link to="/services/fuel" className="text-blue-100 hover:text-white transition-colors">
                   Fuel
-                </button>
-                <button onClick={() => scrollToSection("services/finance")} className="text-blue-100 hover:text-white transition-colors">
+                </Link>
+                <Link to="services/finance" className="text-blue-100 hover:text-white transition-colors">
                   Finance
-                </button>
-                <button onClick={() => scrollToSection("services/insurance")} className="text-blue-100 hover:text-white transition-colors">
+                </Link>
+                <Link to="services/insurance"className="text-blue-100 hover:text-white transition-colors">
                   Insurance
-                </button>
+                </Link>
               </div>
             </div>
           </div>

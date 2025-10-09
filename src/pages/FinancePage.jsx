@@ -14,6 +14,7 @@ import EqLeaseAndLoans from "../assets/EqLease&Loan.png";
 import EqLiOCredit from "../assets/EqLiOCredit.png";
 
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const financialServices = [
   {
@@ -89,7 +90,10 @@ const FinancialCards = () => {
       <nav className="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
           <div className="cursor-pointer" onClick={() => handleScroll("home")}>
+            <Link to="/">
+
             <img src={mavigroup} alt="Mavi Logo" className="h-12 w-auto object-contain" />
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-8 lg:space-x-10">
@@ -175,7 +179,10 @@ const FinancialCards = () => {
           animate={gridInView ? { x: 0, opacity: 1 } : {}}
           className="overflow-hidden rounded-2xl shadow-2xl bg-white"
         >
+          
+            
           <img src={finance2} alt="Mavi Financial" className="w-full h-full object-cover rounded-2xl" />
+           
         </motion.div>
 
         <motion.div
