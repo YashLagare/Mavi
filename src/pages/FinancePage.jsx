@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
 import finance from "../assets/finace.jpg";
-import finance2 from "../assets/finance2.jpg"
+import finance2 from "../assets/finance2.jpg";
 import mavigroup from "../assets/mavigroup.jpg";
-import Equipment from "../assets/EquipmentRefinance.jpg"
+import Equipment from "../assets/EquipmentRefinance.jpg";
 import mavi from "../assets/mavifinancial-logofooter.jpg";
 import Financing from "../assets/Financing.jpg";
 import fact from "../assets/fact.jpg";
@@ -87,12 +87,12 @@ const FinancialCards = () => {
     <>
       {/* Navbar */}
       <nav className="bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-50">
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center h-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
           <div className="cursor-pointer" onClick={() => handleScroll("home")}>
             <img src={mavigroup} alt="Mavi Logo" className="h-12 w-auto object-contain" />
           </div>
 
-          <div className="hidden md:flex items-center space-x-10">
+          <div className="hidden md:flex items-center space-x-8 lg:space-x-10">
             {menuLinks.map((link) => (
               <button
                 key={link}
@@ -140,19 +140,19 @@ const FinancialCards = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={headerInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 1 }}
-        className="relative h-[700px] text-white"
+        className="relative h-[500px] sm:h-[600px] md:h-[700px] lg:h-[750px] text-white"
       >
         <img src={finance} alt="Finance" className="absolute inset-0 w-full h-full object-cover brightness-50" />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
           <motion.h1
-            className="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight drop-shadow-lg"
+            className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 tracking-tight drop-shadow-lg"
             initial={{ y: -30, opacity: 0 }}
             animate={headerInView ? { y: 0, opacity: 1 } : {}}
           >
             Financial Services
           </motion.h1>
           <motion.p
-            className="text-2xl max-w-3xl leading-relaxed text-gray-200"
+            className="text-lg sm:text-xl md:text-2xl lg:text-2xl max-w-3xl leading-relaxed text-gray-200"
             initial={{ y: 30, opacity: 0 }}
             animate={headerInView ? { y: 0, opacity: 1 } : {}}
           >
@@ -167,24 +167,24 @@ const FinancialCards = () => {
         initial={{ opacity: 0, y: 50 }}
         animate={gridInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8 }}
-        className="py-24 px-6 max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center"
+        className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center"
         id="about"
       >
         <motion.div
           initial={{ x: -50, opacity: 0 }}
           animate={gridInView ? { x: 0, opacity: 1 } : {}}
-          className="overflow-hidden rounded-3xl shadow-2xl bg-white p-4"
+          className="overflow-hidden rounded-2xl shadow-2xl bg-white"
         >
-          <img src={finance2} alt="Mavi Financial" className="rounded-2xl w-full object-cover" />
+          <img src={finance2} alt="Mavi Financial" className="w-full h-full object-cover rounded-2xl" />
         </motion.div>
 
         <motion.div
           initial={{ x: 50, opacity: 0 }}
           animate={gridInView ? { x: 0, opacity: 1 } : {}}
-          className="space-y-6"
+          className="space-y-4 sm:space-y-6"
         >
-          <h2 className="text-5xl font-bold text-gray-800">About Mavi’s Financial</h2>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800">About Mavi’s Financial</h2>
+          <p className="text-gray-600 text-base sm:text-lg md:text-lg leading-relaxed">
             At Mavi Financial, we believe securing financing should be simple, transparent, and tailored to you.
             Whether you’re looking to lease, purchase, or grow your business, our team combines industry expertise
             with a personal touch to deliver solutions that fit your needs.
@@ -200,14 +200,14 @@ const FinancialCards = () => {
       {/* Services Section */}
       <section
         id="services"
-        ref={servicesRef} // ✅ Important: attach ref here
-        className="py-24 bg-gradient-to-b from-gray-50 to-white"
+        ref={servicesRef}
+        className="py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-gray-50 to-white"
       >
-        <h2 className="text-5xl font-bold text-center text-gray-800 mb-20">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center text-gray-800 mb-12 sm:mb-16 lg:mb-20">
           Our <span className="text-blue-700">Financial Services</span>
         </h2>
 
-        <div className="max-w-7xl mx-auto space-y-24 px-6">
+        <div className="max-w-7xl mx-auto space-y-12 sm:space-y-16 lg:space-y-24 px-4 sm:px-6 lg:px-8">
           {financialServices.map((service, idx) => (
             <motion.div
               key={idx}
@@ -217,27 +217,27 @@ const FinancialCards = () => {
               transition={{ duration: 0.6, delay: idx * 0.1 }}
               className={`flex flex-col lg:flex-row ${
                 idx % 2 === 1 ? "lg:flex-row-reverse" : ""
-              } bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500`}
+              } bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-500`}
             >
-              <div className="lg:w-1/2 flex justify-center items-center bg-gradient-to-r from-blue-50 to-gray-50">
+              <div className="lg:w-1/2 flex justify-center items-center bg-gradient-to-r from-blue-50 to-gray-50 p-6 sm:p-10">
                 <img
                   src={service.image || Financing}
                   alt={service.title}
-                  className="w-[75%] h-[400px] object-contain transform hover:scale-105 transition-transform duration-500"
+                  className="w-full max-w-md sm:max-w-lg lg:max-w-xl h-auto object-contain transform hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="lg:w-1/2 p-10 flex flex-col justify-center space-y-5">
-                <h3 className="text-4xl font-semibold text-gray-800 border-b-4 border-blue-600 pb-2 w-fit">
+              <div className="lg:w-1/2 p-6 sm:p-10 flex flex-col justify-center space-y-4 sm:space-y-5">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-800 border-b-4 border-blue-600 pb-2 w-fit">
                   {service.title}
                 </h3>
                 {Array.isArray(service.content)
                   ? service.content.map((para, i) => (
-                      <p key={i} className="text-gray-600 text-lg leading-relaxed">
+                      <p key={i} className="text-gray-600 text-base sm:text-lg md:text-lg leading-relaxed">
                         {para}
                       </p>
                     ))
                   : (
-                    <p className="text-gray-600 text-lg leading-relaxed">{service.content}</p>
+                    <p className="text-gray-600 text-base sm:text-lg md:text-lg leading-relaxed">{service.content}</p>
                   )}
               </div>
             </motion.div>
@@ -246,24 +246,24 @@ const FinancialCards = () => {
       </section>
 
       {/* Footer */}
-      <footer id="contact" className="bg-gray-900 text-white py-16">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+      <footer id="contact" className="bg-gray-900 text-white py-10 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12">
           <div className="flex flex-col items-start space-y-4">
             <img src={mavi} alt="Company Logo" className="w-40 object-contain drop-shadow-lg" />
-            <p className="text-gray-400 text-base leading-relaxed">
+            <p className="text-gray-400 text-sm sm:text-base leading-relaxed">
               Mavi Financial simplifies financing with transparent, personalized solutions to help you lease,
               purchase, or grow your business effortlessly.
             </p>
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-xl text-blue-400">Quick Links</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold mb-4 text-lg sm:text-xl text-blue-400">Quick Links</h4>
+            <ul className="space-y-2 sm:space-y-3">
               {menuLinks.map((link) => (
                 <li key={link}>
                   <button
                     onClick={() => handleScroll(link)}
-                    className="text-gray-400 hover:text-blue-400 text-base transition-colors"
+                    className="text-gray-400 hover:text-blue-400 text-sm sm:text-base transition-colors"
                   >
                     {link}
                   </button>
@@ -273,11 +273,11 @@ const FinancialCards = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-xl text-blue-400">Services</h4>
-            <ul className="space-y-3">
+            <h4 className="font-semibold mb-4 text-lg sm:text-xl text-blue-400">Services</h4>
+            <ul className="space-y-2 sm:space-y-3">
               {financialServices.map((item, idx) => (
                 <li key={idx}>
-                  <span className="text-gray-400 hover:text-blue-400 text-base transition-colors cursor-pointer">
+                  <span className="text-gray-400 hover:text-blue-400 text-sm sm:text-base transition-colors cursor-pointer">
                     {item.title}
                   </span>
                 </li>
@@ -286,8 +286,8 @@ const FinancialCards = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold mb-4 text-xl text-blue-400">Contact Us</h4>
-            <address className="text-gray-400 not-italic space-y-4 text-base">
+            <h4 className="font-semibold mb-4 text-lg sm:text-xl text-blue-400">Contact Us</h4>
+            <address className="text-gray-400 not-italic space-y-2 sm:space-y-4 text-sm sm:text-base">
               <p className="flex items-center gap-2">
                 <FaMapMarkerAlt className="text-blue-500" /> 100 Rutherford Rd. S Unit# 1D, Brampton, ON L6W 3J5
               </p>
@@ -301,11 +301,11 @@ const FinancialCards = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm relative left-35">Mavi Fuel Corporation© 2025 All Rights Reserved. </p>
-          <div className="flex space-x-4 mt-4 md:mt-0">
+        <div className="border-t border-gray-700 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center text-sm sm:text-base">
+          <p className="text-gray-400">Mavi Fuel Corporation © 2025 All Rights Reserved.</p>
+          <div className="flex space-x-4 mt-4 sm:mt-0">
             {["facebook-f", "twitter", "linkedin-in", "instagram"].map((icon, index) => (
-              <a key={index} href="#" className="text-gray-400 hover:text-white transition-colors relative right-[280px]">
+              <a key={index} href="#" className="text-gray-400 hover:text-white transition-colors">
                 <i className={`fab fa-${icon} text-blue-500`}></i>
               </a>
             ))}
