@@ -5,6 +5,7 @@ import FuelPage from "./pages/FuelPage";
 import InsurancePage from "./pages/InsurancePage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Home from "./pages/Home"
 
 function App() {
   return (
@@ -13,9 +14,11 @@ function App() {
      
 
       <Routes>
-        <Route path="/finance" element={<FinancePage />} />
-        <Route path="/fuel" element={<FuelPage />} />
-        <Route path="/insurance" element={<InsurancePage />} />
+         <Route path="/" element={<Home/>} />
+        <Route path="/services/finance" element={<FinancePage />} />
+
+        <Route path="/services/fuel" element={<FuelPage />} />
+        <Route path="/services/insurance" element={<InsurancePage />} />
       </Routes>
       
     </Router>

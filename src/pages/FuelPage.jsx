@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
-import Fuel from "../assets/fuel.jpg";
 import mavi from "../assets/mavi.png";
-import mavigroup from "../assets/mavigroup.jpg"
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import pump from "../assets/pump.jpg"
+import mavigroup from "../assets/mavigroup.jpg";
+import pump from "../assets/pump.jpg";
+import Fuel from "/hero.jpg";
 const fuelCategories = [
   { title: "Diesel Exhaust Fluid (DEF)", desc: "Learn how Diesel Exhaust Fluid reduces emissions and keeps your engines running clean.", icon: "fa-droplet" },
   { title: "Coolants", desc: "Discover the importance of coolants in maintaining optimal engine temperature and performance.", icon: "fa-temperature-high" },
@@ -130,8 +130,24 @@ const FuelPage = () => {
         id="home"
         className="relative text-white h-[750px] overflow-hidden"
       >
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-black "></div>
         <img src={Fuel} alt="Fuel" className="absolute inset-0 w-full h-full object-cover blur-xs" />
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6 lg:px-8">
+          <motion.h1
+            className="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 tracking-tight drop-shadow-lg"
+            initial={{ y: -30, opacity: 0 }}
+            animate={headerInView ? { y: 0, opacity: 1 } : {}}
+          >
+            Smart Fuel 
+          </motion.h1>
+          <motion.p
+            className="text-lg sm:text-xl md:text-2xl lg:text-2xl max-w-3xl leading-relaxed text-gray-200"
+            initial={{ y: 30, opacity: 0 }}
+            animate={headerInView ? { y: 0, opacity: 1 } : {}}
+          >
+            Empowering businesses with efficient, time-saving fuel solutions you can trust.
+          </motion.p>
+        </div>
       </motion.section>
 
       {/* Features Section */}
